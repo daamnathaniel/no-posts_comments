@@ -1,0 +1,8 @@
+<%= notice %>
+
+<%= link_to 'New Post', new_post_path %>
+<% @posts.each do |post| %>
+      <%= link_to post.title, post_path(post) %>
+      <%= truncate(post.body, length: 60) %></p>
+      <%= link_to 'Edit', edit_post_path(post) %>
+<% end %>

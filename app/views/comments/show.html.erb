@@ -1,0 +1,6 @@
+<%= notice %>
+  <%= @comment.body %>
+  <%= @comment.post_id %>
+  <%= @comment.parent_id %>
+<%= link_to 'Edit', edit_comment_path(@comment) %>
+<%= link_to 'Back', comments_path %>

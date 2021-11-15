@@ -1,0 +1,13 @@
+<%= notice %>
+
+    <% @comments.each do |comment| %>
+        <%= comment.body %>
+        <%= comment.post_id %>
+        <%= comment.parent_id %>
+        <%= link_to 'Show', comment %>
+        <%= link_to 'Edit', edit_comment_path(comment) %>
+        <%= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+    
+
+<%= link_to 'New Comment', new_comment_path %>

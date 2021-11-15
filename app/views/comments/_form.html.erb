@@ -1,0 +1,20 @@
+<%= form_with(model: comment, local: true) do |form| %>
+  <% if comment.errors.any? %>
+      <%= pluralize(comment.errors.count, "error") %>
+
+        <% comment.errors.full_messages.each do |message| %>
+          <%= message %>
+        <% end %>
+     
+  <% end %>
+
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+
+    <%= form.label :post_id %>
+    <%= form.number_field :post_id %>
+    <%= form.label :parent_id %>
+    <%= form.number_field :parent_id %>
+    <%= form.submit %>
+
+<% end %>
